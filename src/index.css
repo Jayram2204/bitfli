@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-alabaster: #f4f1ea;
+  --color-alabaster-warm: #efece4;
+  --color-divider: #eae5da;
+  --color-charcoal: #181918;
+  --color-slate-warm: #5c5b57;
+  --color-terracotta: #b86b4b;
+  --color-obsidian: #141514;
+  --color-obsidian-text: #f7f6f2;
+
+  --color-sage-bg: #1e3a2b;
+  --color-sage-fg: #7ce3a6;
+  --color-crimson-bg: #3d1c1c;
+  --color-crimson-fg: #fca5a5;
+  --color-amber-bg: #3b2e17;
+  --color-amber-fg: #fcd34d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #f4f1ea;
+    color: #181918;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #f4f1ea;
+    color: #181918;
+    overflow-x: hidden;
+  }
+
+  input[type="range"].bitfli-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 9999px;
+    background: #eae5da;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"].bitfli-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    background: #181918;
+    border: 2px solid #f4f1ea;
+    box-shadow: 0 1px 4px rgba(20, 21, 20, 0.28);
+    cursor: pointer;
+    transition:
+      transform 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  input[type="range"].bitfli-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: #b86b4b;
+  }
+
+  input[type="range"].bitfli-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    background: #181918;
+    border: 2px solid #f4f1ea;
+    box-shadow: 0 1px 4px rgba(20, 21, 20, 0.28);
+    cursor: pointer;
+    transition:
+      transform 0.15s ease,
+      background-color 0.15s ease;
+  }
+}
+
+@keyframes pulseDash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes topHairlineSweep {
+  0% {
+    transform: translateX(-100%) scaleX(0.35);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(0%) scaleX(0.75);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(115%) scaleX(0.4);
+    opacity: 0.85;
+  }
+}
+
+@keyframes ledgerRowFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-route-flow {
+  stroke-dasharray: 5 5;
+  animation: pulseDash 1.15s linear infinite;
+}
+
+.transition-bitfli {
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-top-hairline {
+  animation: topHairlineSweep 0.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-ledger-row {
+  animation: ledgerRowFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
