@@ -1,0 +1,35 @@
+{
+  "name": "bitfli-xyz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:all": "node -e \"const {spawn}=require('child_process');const p=[spawn('npm',['--prefix','backend','run','dev'],{stdio:'inherit',shell:true}),spawn('npm',['run','dev'],{stdio:'inherit',shell:true})];process.on('SIGINT',()=>p.forEach(c=>c.kill()));\"",
+    "test": "npm --prefix backend test",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "oxfmt"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "lucide-react": "^1.73.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "oxfmt": "^0.76.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^8.0.5"
+  }
+}

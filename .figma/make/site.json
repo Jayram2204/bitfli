@@ -1,0 +1,10 @@
+{
+  "description": "Manage autonomous agency treasuries with cross-chain invoices, spend controls, live audit trails, and automated profit splits for agency teams.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
