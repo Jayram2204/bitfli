@@ -21,6 +21,7 @@ contracts/target/
 
 # Vercel & IDE
 .vercel/
+.vercelignore
 .DS_Store
 *.log
 *.tmp.*
